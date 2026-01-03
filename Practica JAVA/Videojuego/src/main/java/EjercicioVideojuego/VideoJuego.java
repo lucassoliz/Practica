@@ -1,4 +1,4 @@
-package Videojuego;
+package EjercicioVideojuego;
 
 public class VideoJuego {
     private int codigo;
