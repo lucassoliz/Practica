@@ -1,17 +1,18 @@
-
 package com.mycompany.jpaprueba;
 
+import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+// CAMBIO IMPORTANTE: de javax a jakarta
+import jakarta.persistence.Basic;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
 
 @Entity
- public class Alumno {
+ public class Alumno implements Serializable {
  /*Hasta con la ORM podemos decirle a nuestra BD
     Che creame este valor y este id generamelo de forma automatica
     cada vez que recibas un nuevp registro*/  
