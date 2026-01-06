@@ -11,6 +11,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
+// Se implementa Serializable para ques el objeto pueda ser convertido en bytes.
+// Es una buena práctica en Jakarta EE para permitir el transporte de datos 
+// y el manejo de sesiones, aunque para la creación de tablas no sea obligatorio.
+//igual sigue funcionando sin implements Serializable
 @Entity
  public class Alumno implements Serializable {
  /*Hasta con la ORM podemos decirle a nuestra BD
