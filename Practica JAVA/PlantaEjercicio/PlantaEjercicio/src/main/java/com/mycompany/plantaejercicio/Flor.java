@@ -1,7 +1,7 @@
 
 package com.mycompany.plantaejercicio;
 
-public abstract class Flor extends Planta{
+public class Flor extends Planta{
     
     private String colorPetalos;
     private int cantPetalos;
@@ -68,6 +68,7 @@ public abstract class Flor extends Planta{
     
     @Override
     public void decirLoqueSoy() {
+        System.out.println("Hola, soy una flor");
     }
     
 }

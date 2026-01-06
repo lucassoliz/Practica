@@ -1,7 +1,7 @@
 
 package com.mycompany.plantaejercicio;
 
-public abstract class Arbusto extends Planta{
+public class Arbusto extends Planta{
     
     private double ancho;
     private boolean esDomestico;
@@ -67,6 +67,7 @@ public abstract class Arbusto extends Planta{
 
     @Override
     public void decirLoqueSoy() {
+        System.out.println("Hola, soy una arbusto");
     }
     
 }

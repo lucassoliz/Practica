@@ -66,6 +66,7 @@ public class Arbol extends Planta{
     
     @Override
     public void decirLoqueSoy() {
+        System.out.println("Hola, soy un árbol");
     }
     
 }
