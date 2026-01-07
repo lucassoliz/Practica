@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -31,15 +32,31 @@ import jakarta.persistence.TemporalType;
      @Temporal(TemporalType.DATE)
      private Date fechaNac;
 
+     //Vamos a suponer que el alumno es el que debe saber sobre la carrera
+     @OneToOne
+     private Carrera carre; //a nivel logico ya hicimos la relacion
+     
+     
     public Alumno() {
     }
+    //como alumno ahora tiene un nuevo atributo, debo borrar el constructor y actualizarlo con el nuevo atributo
 
-    public Alumno(int id, String nombre, String apellido, Date fechaNac) {
+    public Alumno(int id, String nombre, String apellido, Date fechaNac, Carrera carre) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
+        this.carre = carre;
     }
+//lo mismo con los GETTERS Y SETTERS
+    public Carrera getCarre() {
+        return carre;
+    }
+
+    public void setCarre(Carrera carre) {
+        this.carre = carre;
+    }
+
 
     public int getId() {
         return id;
