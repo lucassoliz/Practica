@@ -72,6 +72,11 @@ import jakarta.persistence.TemporalType;
     public void setFechaNac(Date fechaNac) {
         this.fechaNac = fechaNac;
     }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", fechaNac=" + fechaNac + '}';
+    }
      
      
      

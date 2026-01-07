@@ -2,6 +2,7 @@
 package com.mycompany.jpaprueba.logica;
 
 import com.mycompany.jpaprueba.persistence.ControladoraPersistencia;
+import java.util.ArrayList;
 
  /*
 va a contener todos los métodos necesarios que se utilizarán 
@@ -26,6 +27,16 @@ public class Controladora {
     
     public void editarAlumno(Alumno alu){
         controlPersis.editarAlumno(alu);
+    }
+    //Va a devolver un tipo Alumno
+    public Alumno traerAlumno(int id){
+        
+        return controlPersis.traerAlumno(id);
+        
+    }
+    
+    public ArrayList<Alumno> traerListaAlumnos(){
+        return controlPersis.traerListaAlumnos();
     }
     
     
