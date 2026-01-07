@@ -45,7 +45,7 @@ public class AlumnoJpaController implements Serializable {
             }
         }
     }
-
+//esta es una forma de EDIT
     public void edit(Alumno alumno) throws NonexistentEntityException, Exception {
         EntityManager em = null;
         try {

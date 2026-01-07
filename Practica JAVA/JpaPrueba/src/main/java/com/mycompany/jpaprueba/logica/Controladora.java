@@ -18,5 +18,15 @@ public class Controladora {
         controlPersis.crearAlumno(alu);
     }
     
+    //No le vamos a pasar todo el alumno, directamente le pasamos el id
+    public void eliminarAlumno(int id){
+        controlPersis.eliminarAlumno(id);
+    
+    }
+    
+    public void editarAlumno(Alumno alu){
+        controlPersis.editarAlumno(alu);
+    }
+    
     
 }
