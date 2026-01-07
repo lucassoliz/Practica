@@ -1,7 +1,7 @@
 
 package com.mycompany.jpaprueba.persistence;
 
-import com.mycompany.jpaprueba.Alumno;
+import com.mycompany.jpaprueba.logica.Alumno;
 import com.mycompany.jpaprueba.persistence.exceptions.NonexistentEntityException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

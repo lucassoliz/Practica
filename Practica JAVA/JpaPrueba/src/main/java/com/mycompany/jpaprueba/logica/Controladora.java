@@ -1,0 +1,22 @@
+
+package com.mycompany.jpaprueba.logica;
+
+import com.mycompany.jpaprueba.persistence.ControladoraPersistencia;
+
+ /*
+va a contener todos los métodos necesarios que se utilizarán 
+para llamar a la persistencia y, en consecuencia, 
+interactuar con la base de datos. 
+Por ejemplo, si se quiere crear un método create, 
+se tendrá en esta controladora y se encargará de llamar 
+al método create en la controladora de persistencia */
+public class Controladora {
+    
+    ControladoraPersistencia controlPersis = new ControladoraPersistencia();
+    
+    public void crearAlumno(Alumno alu){
+        controlPersis.crearAlumno(alu);
+    }
+    
+    
+}

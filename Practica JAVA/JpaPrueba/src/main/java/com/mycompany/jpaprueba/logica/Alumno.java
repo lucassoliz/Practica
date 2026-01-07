@@ -1,4 +1,4 @@
-package com.mycompany.jpaprueba;
+package com.mycompany.jpaprueba.logica;
 
 import java.io.Serializable;
 import java.util.Date;
