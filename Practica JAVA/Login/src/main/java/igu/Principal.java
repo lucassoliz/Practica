@@ -143,6 +143,9 @@ public class Principal extends javax.swing.JFrame {
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         
+        txtUsuario.setText("");
+        txtContrasenia.setText("");
+        txtArea.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
