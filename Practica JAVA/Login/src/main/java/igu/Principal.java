@@ -1,13 +1,17 @@
 
 package igu;
 
+import com.mycompany.login.logica.Controladora;
+
 
 public class Principal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Principal.class.getName());
 
+    Controladora control;
     public Principal() {
         initComponents();
+        control = new Controladora(); //Hacemos que el unico momento que se genere una instancia a la logica se cuando creamos la interfaz grafica
     }
 
 
@@ -141,6 +145,20 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+            
+        //creamos una instancia a la controladora de la logica 
+        /*Controladora control = new Controladora();
+        
+        PROBLEMA: Cada vez que el Usuario le de Click al btn Login, va a crear una nueva instancia
+        y asi por cada click ---> Llena espacio en memoria (Muchas instancias) <----- Lo podemos resolver al usarlo como una instancia global
+        */
+        
+        String usuario = txtUsuario.getText();
+        String contrasenia = txtContrasenia.getText();
+        
+        String mensaje = control.validarUsuario(usuario,contrasenia);
+        
+        txtArea.setText(mensaje);
         
     }//GEN-LAST:event_btnLoginActionPerformed
 
