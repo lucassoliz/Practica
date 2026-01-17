@@ -3,11 +3,11 @@ package com.mycompany.primerservlet.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 
 @WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
@@ -29,7 +29,16 @@ public class SvUsuarios extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        //declaramos nuestros atributos del index adentro de los parentesis
+        String dni = request.getParameter("dni");
+        String nombre = request.getParameter("nombre");
+        String apellido = request.getParameter("apellido");
+        String telefono = request.getParameter("telefono");
+        //test para verificar si llevo correctamente
+        /*System.out.println("Dni es:" + dni);
+        System.out.println("Nombre es:" + nombre);
+        System.out.println("Apellido es:" + apellido);
+        System.out.println("Telefono es:" + telefono);*/
     }
 
 
