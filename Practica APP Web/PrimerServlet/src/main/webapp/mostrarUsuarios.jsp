@@ -18,7 +18,8 @@
                 for(Usuario usu : listaUsuarios){
         %>
              <p><b>Usuarioo N <%=cont%> </b></p>
-             <p>Dni:</p>
+             <p>Id: <%=usu.getId()%></p>
+             <p>Dni: <%=usu.getDni()%></p>
              <p> Nombre: <%=usu.getNombre()%></p>
              <p>Apellido: <%=usu.getApellido()%> </p>
              <p>Telefono: <%=usu.getTelefono()%> </p>

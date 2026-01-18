@@ -24,5 +24,16 @@
             <button type="submit"> Mostrar Usuarios</button>
             
         </form>
+        
+        <h1>Eliminar usuario</h1>
+        <p>Ingrese el ID del usuario que desea eliminar</p>
+        <form action="SvEliminar" method="POST"> <%-- no usamos DELETE por el momento porque puede que entre en conflicto
+            por el tema de las actualizaciones, usaremos POST como alternativa --> Tenemos que crear otro Servlet 
+            ya que nuestro SvUsuario ya esta en uso su doGET y su doPOST, y si incluimos a este tambien entrara en conflicto--%>
+            <p><label>ID:</label><input type="text" name="id_usuario"></p>
+            <button type="submit"> Eliminar Usuario</button>
+            
+        </form>
+        
     </body>
 </html>
