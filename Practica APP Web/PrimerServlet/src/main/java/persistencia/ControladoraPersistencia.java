@@ -30,4 +30,18 @@ public class ControladoraPersistencia {
 
 
     }
+
+    public Usuario traerUsuarios(int id_editar) {
+        
+        return usuJpa.findUsuario(id_editar);
+    }
+
+    public void editarUsuario(Usuario usu) {
+        try {
+            usuJpa.edit(usu);
+        } catch (Exception ex) {
+            System.getLogger(ControladoraPersistencia.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+        }
+
+    }
 }
