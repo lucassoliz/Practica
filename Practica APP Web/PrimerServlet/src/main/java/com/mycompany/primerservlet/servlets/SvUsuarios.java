@@ -11,11 +11,13 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
+import logica.Controladora;
 import logica.Usuario;
 
 
 @WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
 public class SvUsuarios extends HttpServlet {
+    Controladora control = new Controladora(); //Global para que lo use tambien el metodo POST y GET
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -28,9 +30,8 @@ public class SvUsuarios extends HttpServlet {
             throws ServletException, IOException {
         //Por el momento practicamos de manera logica, es decir, el programa solo sabe lo que él conoce
         List<Usuario> listaUsuarios = new ArrayList<>();
-        listaUsuarios.add(new Usuario("123","Lucas","Siles", "4444444"));
-        listaUsuarios.add(new Usuario("75433","pancho","tttt", "33333"));
-        listaUsuarios.add(new Usuario("33","jose","martinez", "435353"));
+        //Vamos a traer los usuarios de la BD en vez de crearlo manualmente como lo estabamos haciendo
+        listaUsuarios = control.traerUsuarios();
         
         //clase especial que toma la sesion de usuarios de este momento
         HttpSession misesion = request.getSession(); //de la request, traeme su session
@@ -50,11 +51,16 @@ public class SvUsuarios extends HttpServlet {
         String nombre = request.getParameter("nombre");
         String apellido = request.getParameter("apellido");
         String telefono = request.getParameter("telefono");
-        //test para verificar si llevo correctamente
-        /*System.out.println("Dni es:" + dni);
-        System.out.println("Nombre es:" + nombre);
-        System.out.println("Apellido es:" + apellido);
-        System.out.println("Telefono es:" + telefono);*/
+        
+        Usuario usu = new Usuario();
+        usu.setDni(dni);
+        usu.setApellido(apellido);
+        usu.setNombre(nombre);
+        usu.setTelefono(telefono);
+            
+        control.crearUsuario(usu);
+        response.sendRedirect("index.jsp"); //para que lo redicione al darle enviar
+
     }
 
 
